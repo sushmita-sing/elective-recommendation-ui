@@ -1,10 +1,9 @@
+import React from "react";
 
-
-function fun(){
+export default function NabBar(){
   return(
     <div>
       Hellooo
     </div>
-  ); fuck your
+  );
 }
-hello

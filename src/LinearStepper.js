@@ -14,6 +14,7 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
+import "./LinearStepper";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -30,12 +31,14 @@ function getSteps() {
   ];
 }
 const HighSchoolForm = () => {
-  const { control } = useFormContext();
+  const { control, formState:{ errors }, } = useFormContext();
+  console.log(errors);
   return (
     <>
       <Controller
         control={control}
         name="maths"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="maths"
@@ -45,6 +48,8 @@ const HighSchoolForm = () => {
             fullWidth
             margin="normal"
             {...field}
+            error={Boolean(errors?.maths)}
+            helperText={errors.maths?.message}
           />
         )}
       />
@@ -52,6 +57,7 @@ const HighSchoolForm = () => {
       <Controller
         control={control}
         name="science"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="science"
@@ -61,6 +67,8 @@ const HighSchoolForm = () => {
             fullWidth
             margin="normal"
             {...field}
+            error={Boolean(errors?.science)}
+            helperText={errors.science?.message}
           />
         )}
       />
@@ -68,6 +76,7 @@ const HighSchoolForm = () => {
       <Controller
         control={control}
         name="eng"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="eng"
@@ -77,6 +86,8 @@ const HighSchoolForm = () => {
             fullWidth
             margin="normal"
             {...field}
+            error={Boolean(errors?.eng)}
+            helperText={errors.eng?.message}
           />
         )}
       />
@@ -84,6 +95,7 @@ const HighSchoolForm = () => {
       <Controller
         control={control}
         name="hin"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="hin"
@@ -93,6 +105,8 @@ const HighSchoolForm = () => {
             fullWidth
             margin="normal"
             {...field}
+            error={Boolean(errors?.hin)}
+            helperText={errors.hin?.message}
           />
         )}
       />
@@ -100,6 +114,7 @@ const HighSchoolForm = () => {
       <Controller
         control={control}
         name="com"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="com"
@@ -109,6 +124,8 @@ const HighSchoolForm = () => {
             fullWidth
             margin="normal"
             {...field}
+            error={Boolean(errors?.com)}
+            helperText={errors.com?.message}
           />
         )}
       />
@@ -208,6 +225,7 @@ const FirstSem = () => {
       <Controller
         control={control}
         name="fcet"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="fcet"
@@ -223,6 +241,7 @@ const FirstSem = () => {
       <Controller
         control={control}
         name="c"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="c"
@@ -238,6 +257,7 @@ const FirstSem = () => {
       <Controller
         control={control}
         name="pmc"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="pmc"
@@ -254,6 +274,7 @@ const FirstSem = () => {
       <Controller
         control={control}
         name="dm"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="dm"
@@ -270,6 +291,7 @@ const FirstSem = () => {
       <Controller
         control={control}
         name="coa"
+        rules={{ required: "this field is required." }}
         render={({ field }) => (
           <TextField
             id="coa"
@@ -503,7 +525,12 @@ const LinaerStepper = () => {
       {activeStep === steps.length ? (
         <Typography variant="h3" align="center">
           Recommendation Is Being Generating
-        </Typography>
+          <div >
+            <div id="res">App</div>
+            <div id="res">App</div>
+          </div>
+        
+        </Typography>        
       ) : (
         <>
           <FormProvider {...methods}>
