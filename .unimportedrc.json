@@ -1,0 +1,15 @@
+{
+  "ignoreUnresolved": [],
+  "ignoreUnused": [
+    "@emotion/styled",
+    "@material-ui/icons",
+    "@mui/icons-material",
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "@testing-library/user-event",
+    "react-router-dom",
+    "react-scripts",
+    "web-vitals"
+  ],
+  "ignoreUnimported": []
+}
