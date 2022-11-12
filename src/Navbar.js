@@ -1,9 +1,10 @@
 import React from "react";
+import "./Navbar";
 
-export default function NabBar(){
+export default function NavBar(){
   return(
     <div>
-      Hellooo
+      Hello
     </div>
   );
 }

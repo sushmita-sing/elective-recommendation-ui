@@ -1,6 +1,5 @@
 import LinearStepper from "./LinearStepper";
 import { Container, Paper, Box } from "@material-ui/core";
-import Navbar from "./Navbar";
 import "./App.css";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         <br/>
         <br/>
         <br/>
-        <Navbar/>
+        
         <br/>
       </div>
       <Container component={Box} p={4}>

@@ -15,6 +15,11 @@ import {
   useFormContext,
 } from "react-hook-form";
 import "./LinearStepper";
+import {Card,
+  CardBlock,
+  CardFooter,
+  CardTitle, } from "react-bootstrap-card";
+
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -524,12 +529,21 @@ const LinaerStepper = () => {
 
       {activeStep === steps.length ? (
         <Typography variant="h3" align="center">
-          Recommendation Is Being Generating
-          <div >
-            <div id="res">App</div>
-            <div id="res">App</div>
+          Recommendation Generated
+          <div class="box">
+            <div ></div>
+            <div >
+            <Card>
+              <CardBlock>
+                <CardTitle>
+                  Subject:
+                </CardTitle>
+                  SCORE:
+              </CardBlock>
+            </Card>      
+            </div>
+            <p class="text" style={{fontSize: "20px", }}>Note: Less score means highly recommended</p>
           </div>
-        
         </Typography>        
       ) : (
         <>
